@@ -43,3 +43,18 @@
 .gf:hover .gf-shadow,.gf.is-open .gf-shadow{transform:scaleX(1.08) translateY(6px);opacity:.8}
 .gf:active .gf-front{transform:perspective(700px) rotateX(-4deg) translateY(2px)}
 @media (prefers-reduced-motion:reduce){.gf *{transition:none!important}}
+
+/* ===== Blue version: add the class gf-blue next to gf ===== */
+.gf-blue .gf-back{background:linear-gradient(180deg,#2f66e8,#14307f)}
+.gf-blue .gf-shadow{background:rgba(30,70,200,.35)}
+.gf-blue .gf-paper i{background:#cddbf6}
+.gf-blue .gf-p1{background:#f8fbff}
+.gf-blue .gf-p2{background:#eef4ff}
+.gf-blue .gf-p3{background:#e8f0ff}
+.gf-blue .gf-glass{
+  background:
+    radial-gradient(220px circle at var(--gf-mx,35%) var(--gf-my,30%),rgba(255,255,255,.32),transparent 70%),
+    linear-gradient(180deg,rgba(255,255,255,.45) 0,transparent 5px),
+    linear-gradient(90deg,rgba(10,36,120,.92) 0,rgba(25,64,170,.7) 7%,rgba(60,110,220,.18) 20%,transparent 30%,transparent 76%,rgba(25,64,170,.5) 89%,rgba(10,32,110,.92) 100%),
+    linear-gradient(180deg,transparent 52%,rgba(8,28,105,.72) 100%),
+    linear-gradient(180deg,rgba(214,230,255,.74),rgba(160,196,255,.55))}
