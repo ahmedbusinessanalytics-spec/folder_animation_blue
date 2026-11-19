@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glass Folder</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Demo page only: not part of the component */
+  body{margin:0;font-family:system-ui,sans-serif;background:#fff;color:#222}
+  .demo{max-width:480px;margin:0 auto;padding:24px 16px}
+  .slot{width:100%}   /* the folder takes the width of this box */
+</style>
+</head>
+<body>
+<div class="demo">
+  <h1>Your page</h1>
+  <p>The folder is just an element. It fills the width of the box it sits in.</p>
+
+  <!-- ===== Glass Folder: copy from here ===== -->
+  <div class="slot">
+    <div class="gf-box">
+      <div class="gf" tabindex="0" role="img" aria-label="Folder with documents">
+        <div class="gf-shadow"></div>
+        <div class="gf-stage">
+          <div class="gf-back"></div>
+          <div class="gf-paper gf-p1"><i></i></div>
+          <div class="gf-paper gf-p2"><i></i><i></i><i></i></div>
+          <div class="gf-paper gf-p3"><i></i><i></i></div>
+          <div class="gf-front"><div class="gf-glass"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ===== to here ===== -->
+
+  <p>More content below the folder.</p>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

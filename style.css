@@ -1,0 +1,45 @@
+/* The box = the space the component lives in. It never scrolls and never exceeds its parent. */
+.gf-box{position:relative;display:block;width:100%;aspect-ratio:400/360;overflow:hidden;background:transparent}
+/* To fill a parent that has its own height, add the class gf-fill */
+.gf-box.gf-fill{height:100%;aspect-ratio:auto}
+.gf{--gf-scale:1;position:absolute;left:50%;top:50%;width:435px;height:340px;transform:translate(-50%,-50%) scale(var(--gf-scale)) translateY(15px);cursor:pointer;outline:none;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.gf *{box-sizing:border-box}
+.gf-shadow{position:absolute;left:50px;top:290px;width:340px;height:40px;border-radius:50%;background:rgba(0,0,0,.22);filter:blur(22px);transition:transform .6s cubic-bezier(.2,.9,.3,1),opacity .6s}
+.gf-stage{position:absolute;inset:0;transition:transform .35s ease-out;transform:perspective(900px) rotateX(var(--gf-rx,0deg)) rotateY(var(--gf-ry,0deg))}
+
+/* back panel */
+.gf-back{position:absolute;left:38px;top:20px;width:362px;height:300px;border-radius:24px;background:linear-gradient(180deg,#4a4a4a,#2f2f2f)}
+
+/* papers */
+.gf-paper{position:absolute;background:#f1f1f1;transition:transform .65s cubic-bezier(.25,1.35,.45,1)}
+.gf-paper i{position:absolute;display:block;height:8px;border-radius:5px;background:#d3d3d3}
+.gf-p1{left:65px;top:43px;width:195px;height:175px;border-radius:20px;background:#f6f6f6;z-index:3;transform-origin:0 0;transform:rotate(-7deg)}
+.gf-p1 i{left:32px;top:30px;width:135px;height:9px}
+.gf-p2{left:250px;top:35px;width:92px;height:150px;border-radius:18px;background:#eeeeee;z-index:2;transform:rotate(0deg)}
+.gf-p2 i:nth-child(1){left:12px;top:30px;width:30px;background:#d0d0d0}
+.gf-p2 i:nth-child(2){left:18px;top:68px;width:22px;height:6px;background:#c9c9c9}
+.gf-p2 i:nth-child(3){left:18px;top:85px;width:22px;height:6px;background:#c9c9c9}
+.gf-p3{left:312px;top:62px;width:62px;height:140px;border-radius:16px;background:#ececec;z-index:1;transform:rotate(1.5deg)}
+.gf-p3 i:nth-child(1){left:8px;top:32px;width:28px;transform:rotate(3deg);background:#cdcdcd}
+.gf-p3 i:nth-child(2){left:8px;top:58px;width:20px;height:6px;background:#c9c9c9}
+
+/* frosted glass front */
+.gf-front{position:absolute;left:18px;top:80px;width:400px;height:245px;z-index:5;pointer-events:none;transform-origin:50% 100%;transition:transform .55s cubic-bezier(.25,1.25,.45,1)}
+.gf-glass{position:absolute;inset:0;
+  clip-path:path("M28 0H188Q202 0 212 11L232 40Q242 52 258 52H372Q398 52 398 80L382 215Q378 245 350 245H52Q24 245 18 215L1 30Q0 0 28 0Z");
+  -webkit-backdrop-filter:blur(14px) saturate(.8);backdrop-filter:blur(14px) saturate(.8);
+  background:
+    radial-gradient(220px circle at var(--gf-mx,35%) var(--gf-my,30%),rgba(255,255,255,.28),transparent 70%),
+    linear-gradient(180deg,rgba(255,255,255,.4) 0,transparent 5px),
+    linear-gradient(90deg,rgba(38,38,38,.92) 0,rgba(55,55,55,.7) 7%,rgba(80,80,80,.18) 20%,transparent 30%,transparent 76%,rgba(60,60,60,.5) 89%,rgba(36,36,36,.92) 100%),
+    linear-gradient(180deg,transparent 52%,rgba(30,30,30,.7) 100%),
+    linear-gradient(180deg,rgba(238,238,238,.72),rgba(205,205,205,.55))}
+
+/* hover / focus = open */
+.gf:hover .gf-p1,.gf:focus-visible .gf-p1,.gf.is-open .gf-p1{transform:translate(-8px,-46px) rotate(-10deg)}
+.gf:hover .gf-p2,.gf:focus-visible .gf-p2,.gf.is-open .gf-p2{transform:translate(2px,-60px) rotate(2deg)}
+.gf:hover .gf-p3,.gf:focus-visible .gf-p3,.gf.is-open .gf-p3{transform:translate(14px,-42px) rotate(7deg)}
+.gf:hover .gf-front,.gf:focus-visible .gf-front,.gf.is-open .gf-front{transform:perspective(700px) rotateX(-9deg) translateY(6px)}
+.gf:hover .gf-shadow,.gf.is-open .gf-shadow{transform:scaleX(1.08) translateY(6px);opacity:.8}
+.gf:active .gf-front{transform:perspective(700px) rotateX(-4deg) translateY(2px)}
+@media (prefers-reduced-motion:reduce){.gf *{transition:none!important}}
